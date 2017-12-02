@@ -21,13 +21,20 @@ io.on('connection', (socket) => {
 
     socket.on('createMessage', (message) => {
         console.log('createMessage:', JSON.stringify(message, undefined, 2));
+        //The io.emit sends the event to all connections
+        io.emit('newMessage',{
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        });
     });
 
-    socket.emit('newMessage', {
-        from: 'Server-side User',
-        text: 'Hello from server side!',
-        createdAt: new Date().toString()
-    });
+    //It emits a message to a single connection
+    // socket.emit('newMessage', {
+    //     from: 'Server-side User',
+    //     text: 'Hello from server side!',
+    //     createdAt: new Date().toString()
+    // });
 
     socket.on('disconnect', () => {
         console.log('User was disconnected');
