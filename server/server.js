@@ -24,11 +24,12 @@ io.on('connection', (socket) => {
 
     socket.broadcast.emit('newMessage',generateMessage('Admin', 'New user joined'));
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message, callback) => {
         console.log('createMessage:', JSON.stringify(message, undefined, 2));
         //The io.emit sends the event to all connections
         io.emit('newMessage',generateMessage(message.from, message.text));
-
+        //Send an acknowledgement back to the client
+        callback('This is the ack from server');
         //The broadcast sends the event to all except the same socket
         // socket.broadcast.emit('newMessage',{
         //     from: message.from,
