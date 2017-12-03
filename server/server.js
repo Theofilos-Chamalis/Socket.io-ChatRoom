@@ -3,7 +3,10 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
-const {generateMessage} = require('./utils/message.js');
+const {
+    generateMessage,
+    generateLocationMessage
+} = require('./utils/message.js');
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 var app = express();
@@ -22,12 +25,12 @@ io.on('connection', (socket) => {
 
     socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
 
-    socket.broadcast.emit('newMessage',generateMessage('Admin', 'New user joined'));
+    socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
     socket.on('createMessage', (message, callback) => {
         console.log('createMessage:', JSON.stringify(message, undefined, 2));
         //The io.emit sends the event to all connections
-        io.emit('newMessage',generateMessage(message.from, message.text));
+        io.emit('newMessage', generateMessage(message.from, message.text));
         //Send an acknowledgement back to the client
         callback('This is the ack from server');
         //The broadcast sends the event to all except the same socket
@@ -36,6 +39,10 @@ io.on('connection', (socket) => {
         //     text: message.text,
         //     createdAt: new Date().getTime()
         // });
+    });
+
+    socket.on('createLocationMessage', (coords) => {
+        io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
     });
 
     //It emits a message to a single connection
