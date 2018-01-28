@@ -13,12 +13,17 @@ Screenshots
 ---------------------
 <h2 align="center">Node test chat app - Home Screen</h2>
 
-![Alt text](https://github.com/Theofilos-Chamalis/VueJS-Monster-Battles/blob/master/HomeScreen.png "Monster Battles - Home Screen")
+![Alt text](https://github.com/Theofilos-Chamalis/node-test-chat-app/blob/master/home%20screen.png "Home Screen")
 
 <br />
 
 <h2 align="center">Node test chat app - Chat Room</h2>
 
-![Alt text](https://github.com/Theofilos-Chamalis/VueJS-Monster-Battles/blob/master/BattleScreen.png "Monster Battles - Battle Screen")
+![Alt text](https://github.com/Theofilos-Chamalis/node-test-chat-app/blob/master/chat%20room.png "Chat Room")
 
+---------------------
 
+<h2>Note</h2>
+*You can also access it online at:
+
+https://obscure-spire-66013.herokuapp.com/
