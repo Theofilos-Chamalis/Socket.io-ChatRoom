@@ -5,6 +5,8 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const compression = require('compression');
+const helmet = require('helmet');
 
 const {
   generateMessage,
@@ -16,9 +18,17 @@ const { Users } = require('./utils/users.js');
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 var app = express();
+
 //Create a server by explicitly calling the createServer method
 //instead of letting app.listen do that in order to attach socket.io
 var server = http.createServer(app);
+
+// Use GZIP compression on the requests
+app.use(compression());
+
+// Use helmet for securing the requests
+app.use(helmet());
+
 //This creates a websockets server so we can emit or listen to events
 var io = socketIO(server);
 var users = new Users();
