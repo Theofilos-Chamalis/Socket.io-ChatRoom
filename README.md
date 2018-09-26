@@ -1,4 +1,4 @@
-# node-test-chat-app
+# Socket.io ChatRoom
 A chat room application created with Node.js, mustache.js, socket.io and more
 
 <br/>Features included:
@@ -26,4 +26,4 @@ Screenshots
 <h2>Note</h2>
 *You can also access it online at:
 
-https://obscure-spire-66013.herokuapp.com/
+https://socket-io-chat-room.herokuapp.com/
