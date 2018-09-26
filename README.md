@@ -11,13 +11,13 @@ A chat room application created with Node.js, mustache.js, socket.io and more
 
 Screenshots
 ---------------------
-<h2 align="center">Node test chat app - Home Screen</h2>
+<h2 align="center">Home Screen</h2>
 
 ![Alt text](https://github.com/Theofilos-Chamalis/node-test-chat-app/blob/master/home%20screen.png "Home Screen")
 
 <br />
 
-<h2 align="center">Node test chat app - Chat Room</h2>
+<h2 align="center">Chat Room</h2>
 
 ![Alt text](https://github.com/Theofilos-Chamalis/node-test-chat-app/blob/master/chat%20room.png "Chat Room")
 
