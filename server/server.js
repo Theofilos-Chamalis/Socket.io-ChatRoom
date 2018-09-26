@@ -1,3 +1,6 @@
+// Enable strict JS mode globally to prevent common errors
+'use strict';
+
 const path = require('path');
 const http = require('http');
 const express = require('express');

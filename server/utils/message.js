@@ -1,3 +1,6 @@
+// Enable strict JS mode globally to prevent common errors
+'use strict';
+
 var moment = require('moment');
 
 var generateMessage = (from, text) => {

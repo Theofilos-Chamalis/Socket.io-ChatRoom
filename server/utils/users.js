@@ -1,3 +1,6 @@
+// Enable strict JS mode globally to prevent common errors
+'use strict';
+
 class Users {
   constructor(name, age) {
     this.users = [];
