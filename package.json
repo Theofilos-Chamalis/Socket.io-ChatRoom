@@ -10,7 +10,7 @@
   "author": "Theofilos Chamalis",
   "license": "ISC",
   "dependencies": {
-    "compression": "^1.7.4",
+    "compression": "^1.7.5",
     "express": "^4.21.1",
     "helmet": "^4.6.0",
     "moment": "^2.30.1",
